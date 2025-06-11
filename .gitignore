@@ -1,26 +1,15 @@
-# Composer
+# Dependencies
 /vendor/
 composer.lock
 
-# Pint & PHP CS Fixer
-.php-cs-fixer.cache
-.php_cs.cache
-
-# PHPUnit
-.phpunit.result.cache
-/coverage/
-/build/
-
-# IDE Files
+# IDE files
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
 *.swp
 *.swo
 *~
 
-# OS Files
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -28,55 +17,56 @@ composer.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
-desktop.ini
+
+# PHPUnit
+.phpunit.cache/
+phpunit.xml.local
+/coverage/
+/coverage-html/
+coverage.xml
+coverage.txt
+junit.xml
+
+# Laravel Pint
+.php-cs-fixer.cache
 
 # Logs
 *.log
 /logs/
-/storage/logs/
 
-# Environment Files
+# Environment files
 .env
 .env.local
 .env.*.local
-.env.backup
-.env.production
 
-# Cache & Temp Files
+# Cache directories
 /cache/
 /tmp/
-*.tmp
-*.temp
 
-# Node.js (if you add frontend tools later)
+# Build artifacts
+/build/
+/dist/
+
+# Node modules (if you add frontend tooling later)
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.npm
-.yarn-integrity
 
-# Documentation Build
-/docs/_build/
-/docs/build/
-
-# Backup Files
-*.bak
-*.backup
-*.old
-
-# Archive Files
-*.zip
-*.tar
+# Package files
+*.tgz
 *.tar.gz
-*.rar
 
-# Runtime Files
+# Runtime data
+pids
 *.pid
 *.seed
 *.pid.lock
 
-# Optional: If you use Docker
-Dockerfile.local
-docker-compose.override.yml
-.dockerignore.local
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Test results
+test-results/
+.phpunit.cache
