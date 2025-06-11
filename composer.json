@@ -1,0 +1,66 @@
+{
+  "name": "darkswister/laravel_samples",
+  "type": "library",
+  "description": "SOLID Principles PHP Code Samples",
+  "keywords": ["php", "solid", "clean-code", "architecture", "design-patterns"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "DarkSwister",
+      "email": "timurbandev@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "guzzlehttp/guzzle": "^7.8",
+    "illuminate/http": "^10.0",
+    "illuminate/support": "^10.0",
+    "illuminate/contracts": "^10.0",
+    "illuminate/pipeline": "^10.0",
+    "psr/log": "^3.0",
+    "psr/simple-cache": "^3.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13",
+    "phpunit/phpunit": "^10.0",
+    "mockery/mockery": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Services\\": "Services/",
+      "App\\": ""
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "pint-test": [
+      "./vendor/bin/pint --test"
+    ],
+    "pint-dirty": [
+      "./vendor/bin/pint --dirty"
+    ],
+    "pint-verbose": [
+      "./vendor/bin/pint -v"
+    ],
+    "format": [
+      "@pint"
+    ],
+    "format-check": [
+      "@pint-test"
+    ]
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
