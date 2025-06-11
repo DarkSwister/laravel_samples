@@ -1,0 +1,82 @@
+# Composer
+/vendor/
+composer.lock
+
+# Pint & PHP CS Fixer
+.php-cs-fixer.cache
+.php_cs.cache
+
+# PHPUnit
+.phpunit.result.cache
+/coverage/
+/build/
+
+# IDE Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+/logs/
+/storage/logs/
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+.env.backup
+.env.production
+
+# Cache & Temp Files
+/cache/
+/tmp/
+*.tmp
+*.temp
+
+# Node.js (if you add frontend tools later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+
+# Documentation Build
+/docs/_build/
+/docs/build/
+
+# Backup Files
+*.bak
+*.backup
+*.old
+
+# Archive Files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Runtime Files
+*.pid
+*.seed
+*.pid.lock
+
+# Optional: If you use Docker
+Dockerfile.local
+docker-compose.override.yml
+.dockerignore.local

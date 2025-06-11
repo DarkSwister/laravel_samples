@@ -30,7 +30,7 @@ original code snippets from my personal development work, organized by functiona
 
 ```
 laravel_samples/
-├── controllers/
+├── Controllers/
 │   ├── api/
 │   │   ├── UserController.php
 │   │   ├── ProductController.php
@@ -39,11 +39,13 @@ laravel_samples/
 │   │   ├── DashboardController.php
 │   │   └── ReportController.php
 │   └── README.md
-├── models/
+├── Models/
 │   ├── User.php
 │   ├── Product.php
 │   ├── Order.php
 │   └── README.md
+├── Services/
+│   └── PaymentGateway/       # Payment processing system
 [... rest of structure ...]
 ```
 

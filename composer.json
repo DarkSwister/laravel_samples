@@ -2,7 +2,13 @@
   "name": "darkswister/laravel_samples",
   "type": "library",
   "description": "SOLID Principles PHP Code Samples",
-  "keywords": ["php", "solid", "clean-code", "architecture", "design-patterns"],
+  "keywords": [
+    "php",
+    "solid",
+    "clean-code",
+    "architecture",
+    "design-patterns"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -13,17 +19,18 @@
   "require": {
     "php": "^8.4",
     "guzzlehttp/guzzle": "^7.8",
-    "illuminate/http": "^10.0",
-    "illuminate/support": "^10.0",
-    "illuminate/contracts": "^10.0",
-    "illuminate/pipeline": "^10.0",
+    "illuminate/http": "^11.0",
+    "illuminate/support": "^11.0",
+    "illuminate/contracts": "^11.0",
+    "illuminate/pipeline": "^11.0",
     "psr/log": "^3.0",
     "psr/simple-cache": "^3.0"
   },
   "require-dev": {
-    "laravel/pint": "^1.13",
-    "phpunit/phpunit": "^10.0",
-    "mockery/mockery": "^1.6"
+    "laravel/pint": "^1.17",
+    "phpunit/phpunit": "^11.0",
+    "mockery/mockery": "^1.6",
+    "fakerphp/faker": "^1.23"
   },
   "autoload": {
     "psr-4": {
@@ -46,14 +53,27 @@
     "pint-dirty": [
       "./vendor/bin/pint --dirty"
     ],
-    "pint-verbose": [
-      "./vendor/bin/pint -v"
+    "test": [
+      "./vendor/bin/phpunit --no-coverage"
+    ],
+    "test-mock": [
+      "./vendor/bin/phpunit tests/Unit/Services/PaymentGateway/MockPaymentGatewayTest.php"
+    ],
+    "test-verbose": [
+      "./vendor/bin/phpunit --no-coverage --verbose"
+    ],
+    "test-coverage": [
+      "./vendor/bin/phpunit"
     ],
     "format": [
       "@pint"
     ],
     "format-check": [
       "@pint-test"
+    ],
+    "ci": [
+      "@format-check",
+      "@test-mock"
     ]
   },
   "config": {
