@@ -3,7 +3,6 @@
 namespace Tests\Unit\Services\PaymentGateway;
 
 use App\Services\PaymentGateway\DTO\DepositDTO;
-use App\Services\PaymentGateway\DTO\PaginatedResponseDTO;
 use App\Services\PaymentGateway\DTO\UserDTO;
 use App\Services\PaymentGateway\MockPaymentGateway;
 use PHPUnit\Framework\TestCase;
