@@ -45,7 +45,7 @@ jobs:
         run: composer run pint-test
 
       - name: Run MockPaymentGateway tests
-        run: ./vendor/bin/phpunit tests/Unit/Services/PaymentGateway/MockPaymentGatewayTest.php --no-coverage --verbose
+        run: ./vendor/bin/phpunit tests/Unit/Services/PaymentGateway/MockPaymentGatewayTest.php
 
   code-quality:
     runs-on: ubuntu-latest
