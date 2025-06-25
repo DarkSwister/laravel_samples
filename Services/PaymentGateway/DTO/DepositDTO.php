@@ -2,6 +2,8 @@
 
 namespace App\Services\PaymentGateway\DTO;
 
+use DateTimeImmutable;
+
 /**
  * Immutable Deposit Data Transfer Object
  */
@@ -15,8 +17,8 @@ readonly class DepositDTO
         public string $status,
         public ?string $paymentMethod,
         public ?string $transactionId,
-        public ?\DateTimeImmutable $processedAt,
-        public ?\DateTimeImmutable $createdAt
+        public ?DateTimeImmutable $processedAt,
+        public ?DateTimeImmutable $createdAt
     ) {}
 
     public function isProcessed(): bool

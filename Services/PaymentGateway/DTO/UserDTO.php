@@ -2,6 +2,8 @@
 
 namespace App\Services\PaymentGateway\DTO;
 
+use DateTimeImmutable;
+
 /**
  * Immutable User Data Transfer Object
  * Single Responsibility: Hold user data structure
@@ -13,8 +15,8 @@ readonly class UserDTO
         public ?string $email,
         public ?string $name,
         public string $status,
-        public ?\DateTimeImmutable $createdAt,
-        public ?\DateTimeImmutable $updatedAt,
+        public ?DateTimeImmutable $createdAt,
+        public ?DateTimeImmutable $updatedAt,
         public array $metadata = []
     ) {}
 

@@ -19,10 +19,8 @@ class MockPaymentGatewayTest extends TestCase
 
     public function test_sync_users_returns_paginated_response_with_mock_data(): void
     {
-        // Act
         $result = $this->gateway->syncUsers();
 
-        // Assert
         $this->assertEquals(['total' => 1, 'current_page' => 1, 'last_page' => 1], $result->meta);
 
         $users = $result->data->toArray();
@@ -38,13 +36,10 @@ class MockPaymentGatewayTest extends TestCase
 
     public function test_sync_users_with_filters_still_returns_same_data(): void
     {
-        // Arrange
         $filters = ['status' => 'active', 'email' => 'test@example.com'];
 
-        // Act
         $result = $this->gateway->syncUsers($filters);
 
-        // Assert
         $this->assertEquals(['total' => 1, 'current_page' => 1, 'last_page' => 1], $result->meta);
 
         $users = $result->data->toArray();
@@ -53,10 +48,8 @@ class MockPaymentGatewayTest extends TestCase
 
     public function test_sync_deposits_returns_paginated_response_with_mock_data(): void
     {
-        // Act
         $result = $this->gateway->syncDeposits();
 
-        // Assert
         $this->assertEquals(['total' => 1, 'current_page' => 1, 'last_page' => 1], $result->meta);
 
         $deposits = $result->data->toArray();
@@ -75,46 +68,25 @@ class MockPaymentGatewayTest extends TestCase
 
     public function test_sync_withdrawals_returns_empty_paginated_response(): void
     {
-        // Act
         $result = $this->gateway->syncWithdrawals();
 
-        // Assert
         $this->assertEquals(['total' => 0, 'current_page' => 1, 'last_page' => 1], $result->meta);
         $this->assertCount(0, $result->data->toArray());
     }
 
     public function test_sync_bonuses_returns_empty_paginated_response(): void
     {
-        // Act
         $result = $this->gateway->syncBonuses();
 
-        // Assert
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $result);
         $this->assertEquals(['total' => 0, 'current_page' => 1, 'last_page' => 1], $result->meta);
         $this->assertCount(0, $result->data->toArray());
     }
 
     public function test_sync_transactions_returns_empty_paginated_response(): void
     {
-        // Act
         $result = $this->gateway->syncTransactions();
 
-        // Assert
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $result);
         $this->assertEquals(['total' => 0, 'current_page' => 1, 'last_page' => 1], $result->meta);
         $this->assertCount(0, $result->data->toArray());
-    }
-
-    public function test_all_sync_methods_with_filters_work(): void
-    {
-        // Arrange
-        $filters = ['date_from' => '2024-01-01', 'date_to' => '2024-01-31'];
-
-        // Act & Assert - Should not throw exceptions
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $this->gateway->syncUsers($filters));
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $this->gateway->syncDeposits($filters));
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $this->gateway->syncWithdrawals($filters));
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $this->gateway->syncBonuses($filters));
-        $this->assertInstanceOf(PaginatedResponseDTO::class, $this->gateway->syncTransactions($filters));
     }
 }

@@ -6,6 +6,7 @@ use App\Services\PaymentGateway\Contracts\PaymentGatewayInterface;
 use App\Services\PaymentGateway\DTO\DepositDTO;
 use App\Services\PaymentGateway\DTO\PaginatedResponseDTO;
 use App\Services\PaymentGateway\DTO\UserDTO;
+use DateTimeImmutable;
 use Illuminate\Support\LazyCollection;
 
 /**
@@ -22,8 +23,8 @@ class MockPaymentGateway implements PaymentGatewayInterface
                 email: 'test@example.com',
                 name: 'Test User',
                 status: 'active',
-                createdAt: new \DateTimeImmutable,
-                updatedAt: new \DateTimeImmutable
+                createdAt: new DateTimeImmutable,
+                updatedAt: new DateTimeImmutable
             ),
         ]);
 
@@ -44,8 +45,8 @@ class MockPaymentGateway implements PaymentGatewayInterface
                 status: 'completed',
                 paymentMethod: 'credit_card',
                 transactionId: 'txn_123',
-                processedAt: new \DateTimeImmutable,
-                createdAt: new \DateTimeImmutable
+                processedAt: new DateTimeImmutable,
+                createdAt: new DateTimeImmutable
             ),
         ]);
 

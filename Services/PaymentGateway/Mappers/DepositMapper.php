@@ -10,7 +10,7 @@ use Illuminate\Support\LazyCollection;
  */
 class DepositMapper extends AbstractMapper
 {
-    private const VALID_STATUSES = ['pending', 'completed', 'failed', 'cancelled'];
+    private const array VALID_STATUSES = ['pending', 'completed', 'failed', 'cancelled'];
 
     public function toDTOCollection(LazyCollection $data): LazyCollection
     {
@@ -22,13 +22,13 @@ class DepositMapper extends AbstractMapper
         return new DepositDTO(
             id: $data['id'] ?? null,
             userId: $data['user_id'] ?? null,
-            amount: $this->parseAmount($data['amount'] ?? 0), // ✅ DRY
-            currency: $this->parseCurrency($data['currency'] ?? null), // ✅ DRY
-            status: $this->parseStatus($data['status'] ?? null, self::VALID_STATUSES), // ✅ DRY
+            amount: $this->parseAmount($data['amount'] ?? 0),
+            currency: $this->parseCurrency($data['currency'] ?? null),
+            status: $this->parseStatus($data['status'] ?? null, self::VALID_STATUSES),
             paymentMethod: $data['payment_method'] ?? null,
             transactionId: $data['transaction_id'] ?? null,
-            processedAt: $this->parseDate($data['processed_at'] ?? null), // ✅ DRY
-            createdAt: $this->parseDate($data['created_at'] ?? null) // ✅ DRY
+            processedAt: $this->parseDate($data['processed_at'] ?? null),
+            createdAt: $this->parseDate($data['created_at'] ?? null)
         );
     }
 }

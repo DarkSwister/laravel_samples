@@ -3,6 +3,7 @@
 namespace App\Services\PaymentGateway\Mappers;
 
 use App\Services\PaymentGateway\Contracts\DataMapperInterface;
+use DateTimeImmutable;
 use Illuminate\Support\Carbon;
 
 /**
@@ -15,7 +16,7 @@ abstract class AbstractMapper implements DataMapperInterface
      * Parse date string to DateTimeImmutable
      * Single source of truth for date parsing logic
      */
-    protected function parseDate(?string $date): ?\DateTimeImmutable
+    protected function parseDate(?string $date): ?DateTimeImmutable
     {
         if (! $date) {
             return null;
@@ -55,7 +56,7 @@ abstract class AbstractMapper implements DataMapperInterface
             return 'unknown';
         }
 
-        if (! empty($validStatuses) && ! in_array($status, $validStatuses)) {
+        if (! empty($validStatuses) && ! in_array($status, $validStatuses, true)) {
             return 'unknown';
         }
 

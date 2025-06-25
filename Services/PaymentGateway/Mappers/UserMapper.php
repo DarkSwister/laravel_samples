@@ -29,8 +29,8 @@ class UserMapper extends AbstractMapper
             email: $data['email'] ?? null,
             name: $data['name'] ?? $data['full_name'] ?? null,
             status: $this->parseStatus($data['status'] ?? null, self::VALID_STATUSES),
-            createdAt: $this->parseDate($data['created_at'] ?? null), // ✅ DRY
-            updatedAt: $this->parseDate($data['updated_at'] ?? null), // ✅ DRY
+            createdAt: $this->parseDate($data['created_at'] ?? null),
+            updatedAt: $this->parseDate($data['updated_at'] ?? null),
             metadata: $data['metadata'] ?? []
         );
     }
