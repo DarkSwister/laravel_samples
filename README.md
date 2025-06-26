@@ -68,5 +68,3 @@ These samples demonstrate my ability to:
 
 **🔐 I respect all NDAs and confidentiality agreements. This showcase contains only personal project code created for
 learning and demonstration purposes.**
-
-```
